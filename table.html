@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Table</title>
+</head>
+<body>
+        <!-- 
+        th color: #0f5298
+        tr odd: #d5f3fe
+        tr even: #b1eaff
+        title td responsive: #0086b7
+        text color: #595959
+        main title: #354b53
+
+            background: #D1913C;
+            background: -webkit-linear-gradient(to right, #FFD194, #D1913C);
+            background: linear-gradient(to right, #FFD194, #D1913C);
+     -->
+    <style>
+        body {
+            font-family: sans-serif;
+            background: #D1913C;
+            background: -webkit-linear-gradient(to right, #FFD194, #D1913C);
+            background: linear-gradient(to right, #FFD194, #D1913C);
+        }
+        .main {
+            max-width: 992px;
+            margin: 0 auto;
+        }
+        h1.main-title {
+            text-align: center;
+            margin-top: 3em;
+            color: #354b53;
+        }
+
+
+
+        .table-container table {
+            border-collapse: collapse;
+        }
+        .table-container table thead th {
+            padding: 1em;
+            background: #0f5298;
+            color: #fff;
+        }
+        .table-container table tbody td {
+            padding: 1em;
+            color: #595959;
+            white-space: nowrap;
+        }
+        .table-container table tbody td[data-title="Description"] {
+            white-space: normal;
+        }
+        .table-container table tbody tr:nth-child(even) {
+            background: #b1eaff
+        }
+        .table-container table tbody tr:nth-child(odd) {
+            background: #d5f3fe
+        }
+        @media (max-width: 992px) {
+            .table-container table thead th {
+                display: none;
+            }
+            .table-container table tbody td {
+                display: block;
+                padding: 0.5em;
+            }
+            .table-container table tbody td::before {
+                content: attr(data-title) ": ";
+                color: #0086b7;
+            }
+            .table-container table tbody td[data-title="Description"]::before {
+                display: block;
+            }
+            .table-container table tbody tr {
+                margin-bottom: 1em;
+                padding: 1em;
+                display: block;
+            }
+        }
+    </style>
+    <div class="main">
+
+        <h1 class="main-title">Responsive Table</h1>
+        <section class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Color</th>
+                        <th>Description</th>
+                        <th>Date</th>
+                        <th>Precio</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td data-title="Name">Mercedez</td>
+                        <td data-title="Color">Red</td>
+                        <td data-title="Description">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptatum adipisci, quasi cum, aliquam dolorum officiis sit nesciunt natus, ratione tenetur molestiae quae facilis repudiandae veritatis perspiciatis porro autem doloremque eveniet.</td>
+                        <td data-title="Date">04-28-2023</td>
+                        <td data-title="Precio">100 USD</td>
+                    </tr>
+                    <tr>
+                        <td data-title="Name">Toyota</td>
+                        <td data-title="Color">Red</td>
+                        <td data-title="Description">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptatum adipisci, quasi cum, aliquam dolorum officiis sit nesciunt natus, ratione tenetur molestiae quae facilis repudiandae veritatis perspiciatis porro autem doloremque eveniet.</td>
+                        <td data-title="Date">04-28-2023</td>
+                        <td data-title="Precio">100 USD</td>
+                    </tr>
+                    <tr>
+                        <td data-title="Name">Volvo</td>
+                        <td data-title="Color">Red</td>
+                        <td data-title="Description">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptatum adipisci, quasi cum, aliquam dolorum officiis sit nesciunt natus, ratione tenetur molestiae quae facilis repudiandae veritatis perspiciatis porro autem doloremque eveniet.</td>
+                        <td data-title="Date">04-28-2023</td>
+                        <td data-title="Precio">100 USD</td>
+                    </tr>
+                    <tr>
+                        <td data-title="Name">Nissan</td>
+                        <td data-title="Color">Red</td>
+                        <td data-title="Description">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptatum adipisci, quasi cum, aliquam dolorum officiis sit nesciunt natus, ratione tenetur molestiae quae facilis repudiandae veritatis perspiciatis porro autem doloremque eveniet.</td>
+                        <td data-title="Date">04-28-2023</td>
+                        <td data-title="Precio">100 USD</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+    </div>
+
+</body>
+</html>
